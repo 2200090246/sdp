@@ -46,6 +46,7 @@ body {
   color: #333;
 }
 
+/* Ensure input and select elements have the same size */
 .login-form select,
 .login-form input {
   width: 100%;
@@ -54,15 +55,19 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
+  box-sizing: border-box; /* Ensure consistent box sizing */
 }
 
+/* Focus styles for input and select */
 .login-form select:focus,
 .login-form input:focus {
   outline: none;
   border-color: #007bff;
 }
 
+/* Styling for the login button */
 .login-form button {
+  width: 100%; /* Ensure the button width matches the input width */
   padding: 12px;
   border: none;
   background-color: #007bff;
@@ -73,10 +78,12 @@ body {
   transition: background-color 0.3s;
 }
 
+/* Hover effect for the button */
 .login-form button:hover {
   background-color: #0056b3;
 }
 
+/* Error message styling */
 .login-form p {
   color: red;
   font-size: 12px;
