@@ -71,7 +71,7 @@ const [searchResults, setSearchResults] = useState(null);
     }
 
     try {
-      const response = await axios.post("http://localhost:8080/api/auth/users", {
+      const response = await axios.post("https://springbootsdpbackend.up.railway.app/api/auth/users", {
         username: studentUsername,
         password: studentPassword,
         role: role,
@@ -98,7 +98,7 @@ const [searchResults, setSearchResults] = useState(null);
     }
 
     try {
-      const response = await axios.put("http://localhost:8080/api/auth/users", {
+      const response = await axios.put("https://springbootsdpbackend.up.railway.app/api/auth/users", {
         username: studentUsername,
         password: newPassword,
       });
@@ -123,7 +123,7 @@ const [searchResults, setSearchResults] = useState(null);
   }
 
   try {
-    const response = await axios.get(`http://localhost:8080/api/auth/users/search?username=${searchQuery}`);
+    const response = await axios.get(`https://springbootsdpbackend.up.railway.app/api/auth/users/search?username=${searchQuery}`);
     const data = response.data;
 
     if (response.status === 200 && data) {
@@ -148,7 +148,7 @@ const [searchResults, setSearchResults] = useState(null);
     }
 
     try {
-      const response = await axios.delete(`http://localhost:8080/api/auth/users/${studentUsername}`);
+      const response = await axios.delete(`https://springbootsdpbackend.up.railway.app/api/auth/users/${studentUsername}`);
       if (response.data.success) {
         setSuccessMessage("User deleted successfully!");
         setStudentUsername("");
@@ -165,7 +165,7 @@ const [searchResults, setSearchResults] = useState(null);
   const handleViewUserDetails = async () => {
     try {
       console.log("Fetching details for:", username); // Debug
-      const response = await axios.get(`http://localhost:8080/api/auth/users/${username}`);
+      const response = await axios.get(`https://springbootsdpbackend.up.railway.app/api/auth/users/${username}`);
       console.log("Response Data:", response.data); // Debug
       if (response.data) {
         setUserDetails(response.data);
